@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ışıközturklab2;
+package lab2;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class IşıkÖzturkLab2 {
+public class stopProject {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class IşıkÖzturkLab2 {
             System.out.print("Passengers alighting: ");
             int numberOfAlighting = input.nextInt();
             
-            // İnnen yolcu mevcut yolcudan fazla olamaz kontrolü
+           
             while (currentPassengers < numberOfAlighting) {
                 System.out.println("----------------------------------------");
                 System.out.println("Data error at [" + stopName + "]: cannot have more passengers alighting than are currently on the bus. Occupancy set to 0.");
@@ -54,13 +54,13 @@ public class IşıkÖzturkLab2 {
             
             alightPassengers.add(numberOfAlighting);
 
-            // Mevcut yolcu sayısını güncelleme
+           
             currentPassengers = currentPassengers + numberOfBoarding - numberOfAlighting;
             currentPassengersList.add(currentPassengers);
 
             System.out.println("After " + stopName + ", number of current passengers: " + currentPassengers);
 
-            // Kapasite kontrolü
+            
             if (currentPassengers > capacity) {
                 System.out.println("----------------------------------------");
                 System.out.println("Warning: Bus is over capacity at [" + stopName + "]");
@@ -69,16 +69,15 @@ public class IşıkÖzturkLab2 {
                 System.out.println("----------------------------------------");
             }
 
-            // En çok binen yolcu (busiest stop) kontrolü
             if (numberOfBoarding > max) {
                 max = numberOfBoarding;
                 count = i;
             }
 
-            input.nextLine(); // Buffer temizleme
+            input.nextLine(); 
         }
 
-        // Tüm durakları listeleme
+        
         System.out.println("\n--- Trip Summary ---");
         for (int i = 0; i < numberOfStops; i++) {
             System.out.println("----------------------------------------");
@@ -89,7 +88,7 @@ public class IşıkÖzturkLab2 {
             System.out.println("----------------------------------------");
         }
 
-        // İstatistikler
+       
         System.out.println("Name of stop boarding max passengers: " + stopNames.get(count));
         
         int totalPassengersAcrossStops = 0;
@@ -100,7 +99,7 @@ public class IşıkÖzturkLab2 {
         System.out.println("Average occupancy: " + average);
         System.out.println("Number of over capacity stops: " + overofcapacity);
 
-        // Son durak kontrolü (Final Occupancy)
+       
         if (currentPassengers != 0) {
             System.out.println("Warning: " + currentPassengers + " passengers still on the bus after the final stop - please check your data.");
         }
