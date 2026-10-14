@@ -132,7 +132,7 @@ public class CourseRegistrationSystem {
 
             switch (choice) {
                 case "1":
-                    System.path = "";
+                   
                     System.out.print("Student ID: ");
                     String sID = scanner.nextLine();
                     System.out.print("Student Name: ");
